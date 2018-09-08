@@ -1,3 +1,7 @@
+# Miguel Angel Montoya
+# montoya5@purdue.edu
+# ID: 0031152048
+
 # A* algorithm for the cannibals-missionaries problem
 # For python 2.7
 
