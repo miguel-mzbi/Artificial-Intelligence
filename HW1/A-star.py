@@ -26,7 +26,6 @@ class State:
         self.mRight = mRight
         self.cRight = cRight
         self.boat = boat
-        self.priority = 0
 
     def __cmp__(self, other):
         if(isinstance(other, State)):
@@ -105,6 +104,7 @@ def aStar():
                 backtrack.append((parent[currentNode], actionFromParent[parent[currentNode]]))
                 currentNode = parent[currentNode]
             
+            print "INITIAL STATE"
             print backtrack[len(backtrack)-1][0]
             for i in range(len(backtrack)-2, -1, -1):
                 node, action = backtrack[i]
@@ -122,12 +122,13 @@ def aStar():
                     print "from right to left\n"
                 else:
                     print "from left to right\n"
+                if i == 0:
+                    print "GOAL STATE"
                 print node
             break
         # print parent[currentNode]
         # print currentNode
         
-        actionType = 0
         successors = []
         if currentNode.boat == left:
             if currentNode.mLeft >= 2:
